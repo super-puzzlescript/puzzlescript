@@ -1,0 +1,6 @@
+[submodule "puzzlescript"]
+	path = src/puzzlescript
+	url = git@github.com:increpare/PuzzleScript.git
+[submodule "src/puzzlescript"]
+	path = src/puzzlescript
+	url = https://github.com/increpare/PuzzleScript.git

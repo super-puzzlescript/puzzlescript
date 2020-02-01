@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "ignorePatterns": [
+    "dist/",
+    "src/puzzlescript/",
+    "src/override/"
+  ],
+  "rules": {
+    "dot-notation": "off"
+  },
+  "overrides": [
+    {
+      "files": ["include.js", "prepare.js"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
+}
