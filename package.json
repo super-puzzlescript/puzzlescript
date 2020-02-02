@@ -1,0 +1,35 @@
+{
+  "name": "@super-puzzlescript/puzzlescript",
+  "version": "0.0.0-unreleased",
+  "description": "Compile and run PuzzleScript games",
+  "author": "Joseph Mansfield (https://josephmansfield.uk/)",
+  "homepage": "https://github.com/super-puzzlescript/puzzlescript",
+  "bugs": "https://github.com/super-puzzlescript/puzzlescript/issues",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "browser": "dist/umd/puzzlescript.min.js",
+  "unpkg": "dist/umd/puzzlescript.min.js",
+  "scripts": {
+    "build": "npx rollup -c",
+    "prepare": "npm run build && ./set-package-version $PACKAGE_VERSION"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "magic-string": "^0.25.6",
+    "rollup": "^1.29.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "semver": "^7.1.1"
+  },
+  "files": [
+    "dist/"
+  ]
+}

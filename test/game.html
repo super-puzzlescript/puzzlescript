@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <body style="background-color: #000">
+    <div style="height: 600px">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+    <script src="../dist/umd/puzzlescript.min.js"></script>
+    <script>
+window.onload = () => {
+  const puzzleScript = new PuzzleScript()
+  puzzleScript.compile(`
+title Test Game
+author Super PuzzleScript
+
+========
+OBJECTS
+========
+
+Background
+GREEN
+
+Wall
+GREY
+
+Player
+RED
+
+Target
+YELLOW
+
+Crate
+BROWN
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+T = Target
+C = Crate
+
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+Player, Wall, Crate
+
+======
+RULES
+======
+
+[ > Player | Crate ] -> [ > Player | > Crate ]
+
+==============
+WINCONDITIONS
+==============
+
+ALL Crate ON Target
+
+=======
+LEVELS
+=======
+
+
+####..
+#.T#..
+#..###
+#TP..#
+#C.C.#
+#..###
+####..
+`)
+}
+    </script>
+  </body>
+</html>

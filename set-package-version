@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -e
+
+current_dir=$(dirname "${BASH_SOURCE[0]}")
+
+if [ -z "$1" ]; then
+  echo "Usage: set-package-version <semver>"
+  exit 1
+fi
+
+package_version="$1"
+
+cmds=( jq )
+for cmd in "${cmds[@]}"
+do
+  if ! command -v "${cmd}" > /dev/null 2>&1; then
+    echo "${cmd} command not found"
+    exit 1
+  fi
+done
+
+echo "$(
+  cat package.json \
+    | jq ".version = \"${package_version}\""
+)" > package.json
+
+echo "Updated package.json with version ${package_version}"
